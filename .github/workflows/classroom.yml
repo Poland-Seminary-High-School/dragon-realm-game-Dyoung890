@@ -13,8 +13,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Dragon Realm Test
-      id: dragon-realm-test
+    - name: dragonRealm_test
+      id: dragonrealm_test
       uses: classroom-resources/autograding-python-grader@v1
       with:
         timeout: 10
@@ -22,6 +22,6 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        DRAGON-REALM-TEST_RESULTS: "${{steps.dragon-realm-test.outputs.result}}"
+        DRAGONREALM_TEST_RESULTS: "${{steps.dragonrealm_test.outputs.result}}"
       with:
-        runners: dragon-realm-test
+        runners: dragonrealm_test
